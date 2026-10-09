@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "institutional-site-snowballer"
+version = "0.1.0"
+description = "Independent in-site crawling and page-content collection"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.31,<3", "beautifulsoup4>=4.12,<5"]
+
+[project.optional-dependencies]
+pdf = ["pypdf>=4,<7"]
+dev = ["pytest>=8,<10", "ruff>=0.7,<1", "pypdf>=4,<7", "build>=1,<2"]
+
+[project.scripts]
+institutional-site-snowballer = "institutional_site_snowballer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88

@@ -1,0 +1,1 @@
+"""Institutional site content collection."""
